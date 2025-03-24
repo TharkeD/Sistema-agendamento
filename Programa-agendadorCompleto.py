@@ -392,10 +392,10 @@ def salvar_dados():
     with open(ARQUIVO_DADOS, 'w') as f:
         json.dump(dados_servicos, f)
 
-# Adicione estas linhas ANTES de criar a janela principal
+
 carregar_dados()
 
-# Modifique a função de fechamento da janela principal
+
 
 # Criando a janela principal
 janela = tk.Tk()
