@@ -305,65 +305,6 @@ def cancelar_agendamento():
     # Mostrar todos os agendamentos inicialmente
     buscar_agendamentos()
 
-
-
-    
-
-'''def enviar_lembrete():
-    def enviar_whatsapp(destinatario, mensagem):
-        try:
-            # Configurações da conta Twilio
-            # Substitua pelo seu Account SID
-            account_sid = "AC3622426f06a40ae104263981f255a9a8"
-            auth_token = "922128e79e0aabd8a93d70fc28c73fa4"    # Substitua pelo seu Auth Token
-            twilio_whatsapp_number = "whatsapp:+14155238886"  # Número do Twilio
-
-            # Cria o cliente Twilio
-            client = Client(account_sid, auth_token)
-
-            # Envia a mensagem
-            message = client.messages.create(
-                body=mensagem,
-                from_=twilio_whatsapp_number,
-                # Número do destinatário no formato internacional
-                to=f"whatsapp:{destinatario}"
-            )
-            print(f"Mensagem enviada para {destinatario}: {message.sid}")
-        except Exception as e:
-            print(f"Erro ao enviar mensagem: {e}")
-        
-        
-    janela_lembrete = tk.Toplevel()
-    janela_lembrete.title("Envio de Lembretes")
-    janela_lembrete.geometry("600x500")
-    
-    tk.Label(janela_lembrete, text="Agendamentos:", font=("Arial", 12)).pack(pady=5)
-    
-    lista_agendamentos = tk.Listbox(janela_lembrete, width=80, height=15)
-    lista_agendamentos.pack(pady=10)
-    
-    # Preencher lista de agendamentos
-    for agendamento in dados_agendamentos:
-        lista_agendamentos.insert(tk.END, f"{agendamento['nome']} - {agendamento['horario']} - {agendamento['servico']} - {agendamento['numero']}")
-    
-    tk.Label(janela_lembrete, text="Mensagem de Lembrete:").pack(pady=5)
-    entry_mensagem = tk.Text(janela_lembrete, width=70, height=5)
-    entry_mensagem.pack(pady=5)
-    
-    # Texto padrão para a mensagem
-    entry_mensagem.insert("1.0", "Olá! Este é um lembrete para seu agendamento. Aguardamos sua presença!")
-    
-    frame_botoes = tk.Frame(janela_lembrete)
-    frame_botoes.pack(pady=10)
-    
-    btn_enviar = tk.Button(frame_botoes, text="Enviar Lembrete", command=enviar_whatsapp)
-    btn_enviar.grid(row=0, column=0, padx=10)
-    
-    btn_fechar = tk.Button(frame_botoes, text="Fechar", command=janela_lembrete.destroy)
-    btn_fechar.grid(row=0, column=1, padx=10)'''
-    
-
-
 def visualizar_calendario(data_inicial=None):
     def mostrar_agendamentos_do_dia(event=None):
         # Obter a data selecionada no calendário
@@ -432,10 +373,10 @@ def salvar_dados():
     with open(ARQUIVO_DADOS, 'w') as f:
         json.dump(dados_servicos, f)
 
-# Adicione estas linhas ANTES de criar a janela principal
+
 carregar_dados()
 
-# Modifique a função de fechamento da janela principal
+
 
 # Criando a janela principal
 janela = tk.Tk()
